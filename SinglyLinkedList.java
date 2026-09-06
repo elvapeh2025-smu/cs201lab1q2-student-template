@@ -66,12 +66,17 @@ public class SinglyLinkedList<E> {
     }
 
     // Write your codes below
-    public String toString(){
+    public String toString() {
         String result = "";
         Node<E> current = head;
 
         while (current != null) {
-            result += current.getElement() + " ";
+            result += current.getElement();
+
+            if (current.getNext() != null) {
+                result += " ";
+            }
+
             current = current.getNext();
         }
 
