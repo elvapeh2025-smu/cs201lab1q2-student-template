@@ -66,21 +66,21 @@ public class SinglyLinkedList<E> {
     }
 
     // Write your codes below
-    public String toString() {
-        String result = "";
-        Node<E> current = head;
+    public String toString() { 
+        String result = ""; 
+        Node<E> current = head; 
 
-        while (current != null) {
-            result += current.getElement();
+        while (current != null) { 
+            result += current.getElement(); 
 
-            if (current.getNext() != null) {
-                result += " ";
-            }
+            if (current.getNext() != null) { 
+                result += " "; 
+            } 
 
-            current = current.getNext();
-        }
+            current = current.getNext(); 
+        } 
 
-        return result;
+        return result; 
     }
 
     public E removeLast(){
