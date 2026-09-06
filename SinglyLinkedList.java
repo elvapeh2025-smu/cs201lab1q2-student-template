@@ -66,46 +66,56 @@ public class SinglyLinkedList<E> {
     }
 
     // Write your codes below
-    public String toString() { 
-        String result = ""; 
-        Node<E> current = head; 
+    public String toString(){
 
-        while (current != null) { 
-            result += current.getElement(); 
+        // return null
+        if(isEmpty()){
+            return null;
+        }
 
-            if (current.getNext() != null) { 
-                result += " "; 
-            } 
+        // string builder for better complexity
+        StringBuilder ans = new StringBuilder();
 
-            current = current.getNext(); 
-        } 
+        Node<E> current = head;
 
-        return result; 
+        while (current != null) {
+            ans.append(current.getElement().toString());
+
+            // move current so you are not in an infinite loop
+            current = current.getNext();
+        }
+
+        return ans.toString();
     }
 
     public E removeLast(){
-        if (isEmpty()) {
+
+        if(isEmpty()){
+            // nothing to remove
             return null;
         }
 
         E answer = tail.getElement();
 
-        if (size == 1) {
+        if(head == tail){
+            // change to new pointers
             head = null;
             tail = null;
-        } else {
-            Node<E> current = head;
 
-            while (current.getNext() != tail) {
-                current = current.getNext();
+        } else {
+            Node<E> walk = head;
+
+            while(walk.getNext() != tail){
+                // get to the penultimate node
+                walk = walk.getNext();
             }
 
-            tail = current;
-            tail.setNext(null);
+            walk.setNext(null);
+            tail = walk; // new tail pointer
         }
 
         size--;
-        return answer;
+        return answer; // last element
     }
 
     public void reverse(){       
