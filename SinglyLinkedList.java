@@ -68,12 +68,12 @@ public class SinglyLinkedList<E> {
     // Write your codes below
     public String toString(){
 
-        // return null
+        // first make sure  return null
         if(isEmpty()){
             return null;
         }
 
-        // string builder for better complexity
+        // string builder for better complexity --test d else rmeove if fail agn
         StringBuilder ans = new StringBuilder();
 
         Node<E> current = head;
@@ -81,7 +81,7 @@ public class SinglyLinkedList<E> {
         while (current != null) {
             ans.append(current.getElement().toString());
 
-            // move current so you are not in an infinite loop
+            // move current so you are not in infinite loop
             current = current.getNext();
         }
 
@@ -106,7 +106,7 @@ public class SinglyLinkedList<E> {
             Node<E> walk = head;
 
             while(walk.getNext() != tail){
-                // get to the penultimate node
+                // get to the node
                 walk = walk.getNext();
             }
 
