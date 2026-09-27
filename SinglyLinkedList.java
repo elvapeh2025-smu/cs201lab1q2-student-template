@@ -52,7 +52,7 @@ public class SinglyLinkedList<E> {
 
     public E removeFirst(){
         if (isEmpty()){
-            return null;
+            return "";
         }
 
         E answer = head.getElement();
@@ -70,7 +70,7 @@ public class SinglyLinkedList<E> {
 
         // first make sure  return null
         if(isEmpty()){
-            return null;
+            return "";
         }
 
         // string builder for better complexity --test d else rmeove if fail agn
@@ -92,7 +92,7 @@ public class SinglyLinkedList<E> {
 
         if(isEmpty()){
             // nothing to remove
-            return null;
+            return "";
         }
 
         E answer = tail.getElement();
