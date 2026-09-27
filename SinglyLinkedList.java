@@ -52,7 +52,7 @@ public class SinglyLinkedList<E> {
 
     public E removeFirst(){
         if (isEmpty()){
-            return "";
+            return null;
         }
 
         E answer = head.getElement();
@@ -67,21 +67,15 @@ public class SinglyLinkedList<E> {
 
     // Write your codes below
     public String toString(){
-
-        // first make sure  return null
-        if(isEmpty()){
+        if (isEmpty()){
             return "";
         }
 
-        // string builder for better complexity --test d else rmeove if fail agn
         StringBuilder ans = new StringBuilder();
-
         Node<E> current = head;
 
         while (current != null) {
             ans.append(current.getElement().toString());
-
-            // move current so you are not in infinite loop
             current = current.getNext();
         }
 
@@ -89,37 +83,31 @@ public class SinglyLinkedList<E> {
     }
 
     public E removeLast(){
-
-        if(isEmpty()){
-            // nothing to remove
-            return "";
+        if (isEmpty()){
+            return null;
         }
 
         E answer = tail.getElement();
 
-        if(head == tail){
-            // change to new pointers
+        if (head == tail){
             head = null;
             tail = null;
-
         } else {
             Node<E> walk = head;
 
-            while(walk.getNext() != tail){
-                // get to the node
+            while (walk.getNext() != tail){
                 walk = walk.getNext();
             }
 
             walk.setNext(null);
-            tail = walk; // new tail pointer
+            tail = walk;
         }
 
         size--;
-        return answer; // last element
+        return answer;
     }
 
     public void reverse(){
-
         if (isEmpty()){
             return;
         }
