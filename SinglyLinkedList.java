@@ -118,7 +118,12 @@ public class SinglyLinkedList<E> {
         return answer; // last element
     }
 
-    public void reverse(){       
+    public void reverse(){
+
+        if (isEmpty()){
+            return;
+        }
+
         Node<E> previous = null;
         Node<E> current = head;
 
@@ -131,6 +136,6 @@ public class SinglyLinkedList<E> {
             current = next;
         }
 
-        head = previous;              
+        head = previous;
     }
 }
